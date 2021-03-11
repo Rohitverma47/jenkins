@@ -37,16 +37,16 @@ spec:
         }
     }
 stages {
-    container(ubuntu) {
-    stage(hello) {
+    stage('hello') {
         steps {
-              sh """
-              pwd
-              mkdir rohit
-              """
+          container ('ubuntu') {
+            sh """
+            pwd
+            mkdir rohit
+            """
           }    
         }
     }
 
-}    
+}
 }
