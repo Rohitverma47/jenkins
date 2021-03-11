@@ -37,9 +37,9 @@ spec:
         }
     }
 stages {
+    container(ubuntu) {
     stage(hello) {
         steps {
-          container(ubuntu) {
               sh """
               pwd
               mkdir rohit
