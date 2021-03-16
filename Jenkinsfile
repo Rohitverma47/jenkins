@@ -17,7 +17,7 @@ stages {
           }
           container ('dotnet') {
             sh """
-            pwd
+            ls -la
             """
           }
         }
