@@ -11,8 +11,8 @@ stages {
           container ('ubuntu') {
             sh """
             pwd
-            mkdir rohit
-            echo hirohit > rohit.txt
+            touch rohit.txt
+            ls -la
             """
           }
         }
@@ -27,7 +27,7 @@ stages {
           container ('ubuntu') {
             sh """
             pwd
-            cat /home/jenkins/agent/workspace/pipe/rohit.txt
+            ls -la
             """
           
        }
