@@ -38,6 +38,8 @@ spec:
     }
 stages {
     stage('hello') {
+      agent {
+        label 'testpod'
         steps {
           container ('ubuntu') {
             sh """
@@ -47,6 +49,19 @@ stages {
           }    
         }
     }
+    }
 
 }
+     stage('dotnet') {
+       agent {
+         label 'rohitpod'
+        steps {
+          container ('dotnet') {
+            sh """
+            dotnet --version
+            """
+          }
+        }
+     }
+     }
 }
