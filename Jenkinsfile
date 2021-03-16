@@ -39,6 +39,7 @@ spec:
 stages {
     stage('hello') {
       agent {
+        kubernetes {
         label 'testpod'
         steps {
           container ('ubuntu') {
@@ -50,10 +51,12 @@ stages {
         }
     }
     }
+    }
 
 }
      stage('dotnet') {
        agent {
+         kubernetes {
          label 'rohitpod'
         steps {
           container ('dotnet') {
@@ -62,6 +65,7 @@ stages {
             """
           }
         }
+     }
      }
      }
 }
