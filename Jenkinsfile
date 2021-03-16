@@ -16,5 +16,20 @@ stages {
           }
         }
     }
+    stage('hi') {
+      agent {
+        kubernetes {
+        label 'rohitpod'
+        }
+      }
+        steps {
+          container ('ubuntu') {
+            sh """
+            pwd
+            echo Hello
+            """
+          
+       }
+    }
 }
 }
