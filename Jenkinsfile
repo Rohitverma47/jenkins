@@ -12,6 +12,7 @@ stages {
             sh """
             pwd
             mkdir rohit
+            echo hirohit > rohit.txt
             """
           }
         }
@@ -26,7 +27,7 @@ stages {
           container ('ubuntu') {
             sh """
             pwd
-            echo Hello
+            cat /home/jenkins/agent/workspace/pipe/rohit.txt
             """
           
        }
