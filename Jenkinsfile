@@ -15,6 +15,11 @@ stages {
             ls -la
             """
           }
+          container ('dotnet') {
+            sh """
+            pwd
+            """
+          }
         }
     }
     stage('hi') {
